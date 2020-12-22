@@ -34,8 +34,4 @@ int main(int argc, char** argv){
     }
 
     file.close();
-
-    /*char bolean = fecha.IsALeapYear() ? 'T' : 'F';
-
-    std::cout << bolean << std::endl; */
 }
