@@ -9,6 +9,9 @@
  * 
  */
 
+#ifndef FECHA_H
+#define FECHA_H
+
 #include <string>
 #include <array>
 
@@ -38,11 +41,12 @@ class Fecha{
 
     // SETTERS
 
-    int SetDay(const int& new_day) {  day_ = new_day; }
-    int SetMonth(const int& new_month) {  month_ = new_month; }
-    int SetYear(const int& new_year) {  year_ = new_year; }
+    void SetDay(const int& new_day) {  day_ = new_day; }
+    void SetMonth(const int& new_month) {  month_ = new_month; }
+    void SetYear(const int& new_year) {  year_ = new_year; }
 
     bool IsALeapYear();
     void IncreaseDay();
 };
 
+#endif
