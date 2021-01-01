@@ -13,6 +13,7 @@
 #define FECHA_H
 
 #include <string>
+#include <iostream>
 #include <array>
 
 class Fecha{
@@ -32,12 +33,22 @@ class Fecha{
     Fecha(int day, int month, int year) : 
       day_{day}, month_{month}, year_{year} {};
 
+
+    // OPERATORS
+
+    friend std::ostream& operator<<(std::ostream& out, const Fecha& date){
+      out << date.day_ << '/' << date.month_ << '/' << date.year_;
+      return out;
+    }
+
+    Fecha& operator ++();
+
     // GETTERS
 
     int GetDay() const { return day_; }
     int GetMonth() const { return month_; }
     int GetYear() const { return year_; }
-    std::string GetDate() const { return "" + std::to_string(day_) + "/" + std::to_string(month_) + "/" + std::to_string(year_); }
+    
 
     // SETTERS
 
@@ -45,8 +56,8 @@ class Fecha{
     void SetMonth(const int& new_month) {  month_ = new_month; }
     void SetYear(const int& new_year) {  year_ = new_year; }
 
+
     bool IsALeapYear();
-    void IncreaseDay();
 };
 
 #endif

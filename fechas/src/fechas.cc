@@ -29,8 +29,8 @@ int main(int argc, char** argv){
     file.open(output_file, std::ios::out);
 
     for (int i = 0; i < many_dates; ++i){
-        fecha.IncreaseDay(); // Incrementa el dia
-        file << fecha.GetDate() << std::endl;
+        ++fecha;
+        file << fecha << std::endl;
     }
 
     file.close();
